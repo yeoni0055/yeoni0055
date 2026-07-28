@@ -122,7 +122,7 @@
 
     <section class="contact" id="contact">
       <div class="wrap contact-grid">
-        <div class="contact-copy"><span class="kicker">CONTACT</span><h2 class="title">즐거운 코딩 수업을<br><em>함께 시작해 보세요</em></h2><p>수업 대상과 원하는 교육 내용을 남겨주시면 확인 후 안내해 드리겠습니다.</p><div class="notice"><b>안내</b><br>현재 연락처와 SNS는 예시 정보입니다. 실제 운영 전 정확한 연락 수단으로 교체해 주세요.<br><br>hello@example.com · 010-0000-0000</div></div>
+        <div class="contact-copy"><span class="kicker">CONTACT</span><h2 class="title">즐거운 코딩 수업을<br><em>함께 시작해 보세요</em></h2><p>수업 대상과 원하는 교육 내용을 남겨주시면 확인 후 안내해 드리겠습니다.</p><div class="notice"><b>문자 문의</b><br>문의 양식을 작성하고 보내기 버튼을 누르면 문자 작성 화면으로 연결됩니다.<br><br><a href="sms:01092850055">010-9285-0055</a></div></div>
         <form id="contactForm">
           <div class="form-grid">
             <label>이름 *<input name="name" autocomplete="name" placeholder="이름을 입력해 주세요" required></label>
@@ -131,7 +131,7 @@
             <label>학생 연령 또는 학년<input name="grade" placeholder="예: 초등학교 4학년"></label>
             <label class="full">문의 내용 *<textarea name="message" minlength="10" placeholder="원하는 교육 내용과 궁금한 점을 남겨 주세요" required></textarea></label>
           </div>
-          <div class="send-row"><p>※ 포트폴리오용 예시 폼으로 실제 전송 기능은 연결되어 있지 않습니다.</p><button class="btn yellow" type="submit">문의 보내기 →</button></div>
+          <div class="send-row"><p>※ 입력한 내용으로 문자 작성 화면이 열리며, 전송 전 내용을 확인할 수 있습니다.</p><button class="btn yellow" type="submit">문자로 문의 보내기 →</button></div>
           <p class="status" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -149,8 +149,8 @@
     const menuButton=document.querySelector(".hamb"),menu=document.querySelector("#menu");
     menuButton.addEventListener("click",()=>{const open=menu.classList.toggle("open");menuButton.setAttribute("aria-expanded",String(open));menuButton.setAttribute("aria-label",open?"메뉴 닫기":"메뉴 열기")});
     menu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{menu.classList.remove("open");menuButton.setAttribute("aria-expanded","false")}));
-    const form=document.querySelector("#contactForm"),status=document.querySelector(".status");
-    form.addEventListener("submit",e=>{e.preventDefault();const input=form.elements.contact,value=input.value.trim(),email=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),phone=/^[0-9+\-\s()]{9,}$/.test(value);if(!email&&!phone){input.setCustomValidity("올바른 연락처 또는 이메일을 입력해 주세요.");input.reportValidity();input.focus();return}input.setCustomValidity("");status.textContent="문의 내용이 확인되었습니다. 현재는 예시 폼으로 실제 전송되지 않습니다.";status.style.display="block";form.reset()});
+    const form=document.querySelector("#contactForm"),status=document.querySelector(".status"),inquiryPhone="01092850055";
+    form.addEventListener("submit",e=>{e.preventDefault();const input=form.elements.contact,value=input.value.trim(),email=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value),phone=/^[0-9+\-\s()]{9,}$/.test(value);if(!email&&!phone){input.setCustomValidity("올바른 연락처 또는 이메일을 입력해 주세요.");input.reportValidity();input.focus();return}input.setCustomValidity("");const message=["[안나쌤 코딩 수업 문의]",`이름: ${form.elements.name.value.trim()}`,`연락처: ${value}`,`문의 유형: ${form.elements.type.value}`,`학생 연령/학년: ${form.elements.grade.value.trim()||"미입력"}`,"",form.elements.message.value.trim()].join("\n");status.textContent="문자 작성 화면으로 연결합니다. 내용을 확인한 뒤 전송해 주세요.";status.style.display="block";window.location.href=`sms:${inquiryPhone}?body=${encodeURIComponent(message)}`});
     form.elements.contact.addEventListener("input",e=>e.target.setCustomValidity(""));
   </script>
 </body>
