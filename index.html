@@ -110,9 +110,16 @@
     .pixel-avatar{--skin:#f2c7a5;--hair:#3c2b29;--outfit:#4568f2;position:relative;width:112px;height:185px}.pixel-avatar .hair{position:absolute;z-index:3;left:24px;top:9px;width:64px;height:28px;border:4px solid var(--ink);border-bottom:0;border-radius:13px 13px 0 0;background:var(--hair)}.pixel-avatar.girl .hair:before,.pixel-avatar.girl .hair:after{content:"";position:absolute;top:15px;width:15px;height:60px;border:4px solid var(--ink);background:var(--hair)}.pixel-avatar.girl .hair:before{left:-13px}.pixel-avatar.girl .hair:after{right:-13px}.pixel-avatar .avatar-head{position:absolute;z-index:2;left:22px;top:25px;width:68px;height:70px;border:4px solid var(--ink);border-radius:13px;background:var(--skin)}.pixel-avatar .eye{position:absolute;top:27px;width:7px;height:9px;border-radius:3px;background:var(--ink)}.pixel-avatar .eye.left{left:15px}.pixel-avatar .eye.right{right:15px}.pixel-avatar .mouth{position:absolute;left:27px;bottom:14px;width:12px;height:6px;border:3px solid var(--ink);border-top:0;border-radius:0 0 8px 8px}.pixel-avatar .avatar-body{position:absolute;z-index:2;left:19px;top:91px;width:74px;height:61px;border:4px solid var(--ink);border-radius:12px;background:var(--outfit)}.pixel-avatar.girl .avatar-body{border-radius:12px 12px 22px 22px}.pixel-avatar .arm,.pixel-avatar .leg{position:absolute;border:4px solid var(--ink)}.pixel-avatar .arm{z-index:1;top:98px;width:23px;height:56px;border-radius:10px;background:var(--skin)}.pixel-avatar .arm.left{left:2px;transform:rotate(5deg)}.pixel-avatar .arm.right{right:2px;transform:rotate(-5deg)}.pixel-avatar .leg{top:146px;width:28px;height:39px;background:#384463}.pixel-avatar .leg.left{left:24px}.pixel-avatar .leg.right{right:24px}.pixel-avatar.mini{width:34px;height:36px;transform:scale(.27);transform-origin:top left;margin-right:-25px;margin-bottom:-27px}
     .footer-note{margin-top:38px;text-align:center;color:var(--muted);font-size:13px;font-weight:700}
     .avatar-mini-wrap{position:relative;width:32px;height:38px;overflow:hidden;flex:0 0 32px}.avatar-mini-wrap .pixel-avatar.mini{position:absolute;left:5px;top:0;width:112px;height:185px;transform:scale(.2);transform-origin:top left;margin:0}
+    /* 프로젝트 전용 입체 블록 세계 */
+    .start-hero{position:relative;min-height:calc(100vh - 135px);display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:36px;padding:30px 0 50px}.start-hero:before{content:"";position:absolute;z-index:0;inset:7% 0 4%;border:4px solid var(--ink);border-radius:30px;background:linear-gradient(#12213d 0 54%,#28435a 54% 56%,#386a47 56%);box-shadow:12px 12px 0 #0d162a;overflow:hidden}.start-copy,.start-world{position:relative;z-index:1}.start-copy{padding:42px}.start-copy h1{color:#fff;text-shadow:5px 5px 0 #0d162a}.start-copy h1 em{color:#ffe16e}.start-copy>p{color:#dcecff}.start-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}.start-actions .btn{background:#ffd85c;color:var(--ink)}.start-actions .btn.secondary{background:#e9f3ff}.start-world{min-height:430px;perspective:900px}.voxel-land{position:absolute;left:8%;right:5%;bottom:14%;height:190px;transform:rotateX(58deg) rotateZ(-6deg);transform-style:preserve-3d;background:repeating-linear-gradient(0deg,transparent 0 39px,rgba(255,255,255,.18) 40px),repeating-linear-gradient(90deg,#438a4e 0 39px,#5aa360 40px);border:4px solid #14233b;box-shadow:0 30px 0 #6b4931,0 34px 0 #14233b}.voxel-tower{position:absolute;z-index:2;width:68px;height:115px;border:4px solid #14233b;background:linear-gradient(90deg,#65768d 0 68%,#43536b 68%);box-shadow:inset 0 18px #8494a9,8px 8px 0 rgba(0,0,0,.28)}.voxel-tower:before{content:"";position:absolute;top:-24px;left:-4px;width:68px;height:24px;border:4px solid #14233b;background:#93a1b2;clip-path:polygon(0 100%,0 25%,18% 25%,18% 0,38% 0,38% 25%,62% 25%,62% 0,82% 0,82% 25%,100% 25%,100% 100%)}.voxel-tower.one{left:19%;bottom:31%}.voxel-tower.two{right:15%;bottom:23%;height:145px;background:linear-gradient(90deg,#8c6cbd 0 68%,#664894 68%)}.voxel-tree{position:absolute;z-index:3;width:28px;height:75px;border:3px solid #14233b;background:#765039}.voxel-tree:before{content:"";position:absolute;left:-25px;top:-42px;width:72px;height:65px;border:4px solid #14233b;background:linear-gradient(135deg,#45a662 0 50%,#2c7c45 50%);box-shadow:7px 7px 0 rgba(0,0,0,.25)}.voxel-tree.a{left:46%;bottom:28%}.voxel-tree.b{left:62%;bottom:37%;transform:scale(.8)}.start-avatar{position:absolute;z-index:5;left:39%;bottom:8%;transform:scale(.76);transform-origin:bottom center;filter:drop-shadow(9px 10px 0 rgba(0,0,0,.25))}
+    .map-screen{padding-top:24px}.map-heading{text-align:center;color:var(--ink);margin-bottom:20px}.map-heading h1{font-size:clamp(35px,5vw,62px);text-shadow:4px 4px 0 #fff}.map-heading p{font-weight:900}.world-map{position:relative;min-height:680px;border:5px solid #10192e;border-radius:30px;background:radial-gradient(circle at 50% 40%,rgba(255,255,255,.22),transparent 34%),linear-gradient(#4d89b8 0 46%,#2c647f 46% 49%,#3e7d4e 49%);box-shadow:12px 12px 0 #10192e;overflow:hidden}.world-map:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.08) 2px,transparent 2px),linear-gradient(rgba(255,255,255,.08) 2px,transparent 2px);background-size:40px 40px;pointer-events:none}.map-path{position:absolute;left:13%;right:14%;top:47%;height:145px;border:18px solid #d7b875;border-color:#d7b875 transparent transparent;border-radius:50%;transform:rotate(4deg);opacity:.9}.region{position:absolute;z-index:2;width:190px;min-height:150px;padding:72px 12px 12px;border:4px solid #10192e;border-radius:18px;background:#fff;color:var(--ink);cursor:pointer;box-shadow:8px 8px 0 #10192e;text-align:center;transition:transform .2s,filter .2s}.region:hover,.region:focus-visible{transform:translateY(-8px);filter:brightness(1.1)}.region strong,.region span{display:block}.region strong{font-size:18px}.region span{font-size:12px;font-weight:800;color:var(--muted)}.region .region-art{position:absolute;left:50%;top:-47px;width:96px;height:96px;transform:translateX(-50%);border:4px solid #10192e;background:linear-gradient(135deg,var(--region-top) 0 50%,var(--region-side) 50%);box-shadow:8px 8px 0 rgba(0,0,0,.28);font-size:44px;display:grid;place-items:center}.region.forest{--region-top:#55c676;--region-side:#2c8150;left:8%;top:18%}.region.mine{--region-top:#8c9aad;--region-side:#566579;left:39%;top:10%}.region.castle{--region-top:#e7c9a3;--region-side:#b38e65;right:7%;top:23%}.region.island{--region-top:#70d4e8;--region-side:#2c91b0;left:24%;bottom:9%}.region.village{--region-top:#efad69;--region-side:#b8683b;right:19%;bottom:7%}.map-profile{position:absolute;z-index:3;left:50%;top:48%;transform:translate(-50%,-50%) scale(.5);filter:drop-shadow(10px 12px 0 rgba(0,0,0,.25));pointer-events:none}.map-back{position:absolute;z-index:5;left:18px;top:18px}
+    .forest-scene{background:linear-gradient(rgba(3,12,26,.08) 2px,transparent 2px),linear-gradient(90deg,rgba(3,12,26,.08) 2px,transparent 2px),linear-gradient(#13233b 0 63%,#2f6845 63%)!important;background-size:32px 32px,32px 32px,100% 100%!important}.forest-scene:before,.forest-scene:after{content:"";position:absolute;bottom:0;width:34%;height:70%;background:repeating-linear-gradient(90deg,#244d37 0 55px,#356948 55px 85px);clip-path:polygon(0 35%,18% 35%,18% 15%,35% 15%,35% 29%,53% 29%,53% 0,70% 0,70% 24%,88% 24%,88% 8%,100% 8%,100% 100%,0 100%);opacity:.8}.forest-scene:before{left:0}.forest-scene:after{right:0;transform:scaleX(-1)}.crosshair{position:absolute;z-index:2;left:50%;top:50%;width:22px;height:22px;transform:translate(-50%,-50%);pointer-events:none}.crosshair:before,.crosshair:after{content:"";position:absolute;background:rgba(255,255,255,.75)}.crosshair:before{left:10px;top:0;width:2px;height:22px}.crosshair:after{left:0;top:10px;width:22px;height:2px}.target{border-radius:8px!important;background:linear-gradient(135deg,#8ddcff 0 48%,#4c94cf 49% 75%,#2f6a9f 76%)!important;color:#fff!important;text-shadow:3px 3px 0 rgba(0,0,0,.35);box-shadow:inset 0 0 0 5px rgba(255,255,255,.18),8px 10px 0 rgba(0,0,0,.38)!important}.target.bonus-star{background:linear-gradient(135deg,#fff49a 0 48%,#e4b62e 49% 75%,#9a6e06 76%)!important;box-shadow:0 0 18px 7px rgba(255,224,85,.52),8px 10px 0 rgba(0,0,0,.38)!important}.forest-lamps{position:absolute;z-index:1;left:12px;right:12px;bottom:14px;display:flex;justify-content:center;gap:8px;pointer-events:none}.forest-lamps i{width:24px;height:34px;border:3px solid #10192e;background:#31435b;box-shadow:4px 4px 0 rgba(0,0,0,.3)}.forest-lamps i.lit{background:#ffe16e;box-shadow:0 0 15px #ffe16e}
+    .game-hudbar{display:grid;grid-template-columns:minmax(170px,1.4fr) repeat(3,1fr);gap:10px;margin-bottom:12px}.hud-profile{display:flex;align-items:center;gap:10px}.hud-profile .avatar-mini-wrap{background:#dff4ff;border-radius:8px}.hotbar{display:grid;grid-template-columns:repeat(9,1fr);gap:6px;max-width:760px;margin:15px auto 0;padding:9px;border:4px solid #10192e;border-radius:14px;background:#27344c;box-shadow:7px 7px 0 #10192e}.tool-slot{position:relative;display:grid;place-items:center;min-height:58px;border:3px solid #10192e;border-radius:8px;background:#53627a;color:#fff;font-size:25px;box-shadow:inset 0 5px rgba(255,255,255,.12)}.tool-slot.active{outline:4px solid #ffe16e;background:#6d7d97}.tool-slot small{position:absolute;right:4px;bottom:1px;font-size:10px}.tool-slot button{position:absolute;inset:0;border:0;background:transparent;color:inherit;cursor:pointer;font-size:0}.tool-slot button:focus-visible{outline:4px solid #ffe16e}
+    .mission-shell{padding-top:15px}.mission-board{position:relative;min-height:500px;padding:75px 28px 28px;border:5px solid #10192e;border-radius:26px;overflow:hidden;box-shadow:10px 10px 0 #10192e}.mission-board.mine-world{background:linear-gradient(rgba(255,255,255,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.07) 2px,transparent 2px),#39465a;background-size:36px 36px}.mission-board.ko-world{background:linear-gradient(#86c9f2 0 52%,#6ca55d 52%)}.mission-board.en-world{background:linear-gradient(rgba(255,255,255,.14) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.14) 2px,transparent 2px),#2584ad;background-size:42px 42px}.mission-board.basic-world{background:linear-gradient(#8cc8e8 0 48%,#5f955d 48%)}.mission-title{position:absolute;z-index:3;left:50%;top:15px;max-width:calc(100% - 30px);transform:translateX(-50%);margin:0;padding:8px 17px;border:3px solid #10192e;border-radius:12px;background:#fff;font-size:16px;text-align:center;box-shadow:4px 4px 0 #10192e}.drag-layout{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}.drag-items,.drop-zones{display:grid;gap:12px}.drag-token,.drop-zone{min-height:68px;padding:12px;border:4px solid #10192e;border-radius:12px;font-weight:900;box-shadow:5px 5px 0 #10192e}.drag-token{background:#ffe9a8;cursor:grab}.drag-token.selected{outline:5px solid #7fe7ff;transform:translateY(-4px)}.drag-token.done{visibility:hidden}.drop-zone{background:#9faabe;color:#10192e;cursor:pointer}.drop-zone.correct{background:#7bdc94}.typing-stage{max-width:720px;margin:auto;text-align:center}.build-view{position:relative;height:190px;margin-bottom:18px}.castle-build,.bridge-build,.village-build{position:absolute;left:50%;bottom:0;width:80%;height:100%;transform:translateX(-50%);display:flex;align-items:flex-end;justify-content:center;gap:5px}.build-block{width:12%;height:45px;border:3px solid #10192e;background:#e6c99f;box-shadow:4px 4px 0 rgba(0,0,0,.25);opacity:.2}.build-block.built{opacity:1}.en-world .build-block{height:30px;background:#d5ad63}.basic-world .build-block{height:55px;background:#f09b5f}.prompt-word{display:inline-block;min-width:210px;margin:12px 0;padding:13px 25px;border:4px solid #10192e;border-radius:14px;background:#fff;font-size:clamp(30px,5vw,54px);font-weight:900;box-shadow:6px 6px 0 #10192e}.typing-input{display:block;width:min(460px,100%);height:62px;margin:12px auto;padding:0 18px;border:4px solid #10192e;border-radius:14px;background:#fff;font-size:25px;text-align:center;font-weight:900}.typing-guide{display:block;color:#fff;font-weight:900;text-shadow:2px 2px #10192e}.quiz-card{max-width:760px;margin:auto;padding:24px;border:4px solid #10192e;border-radius:18px;background:rgba(255,255,255,.94);box-shadow:7px 7px 0 #10192e;text-align:center}.quiz-card h3{font-size:clamp(22px,4vw,34px)}.quiz-options{display:grid;grid-template-columns:1fr 1fr;gap:12px}.quiz-option{min-height:72px;border:3px solid #10192e;border-radius:12px;background:#fff;font-weight:900;cursor:pointer;box-shadow:4px 4px 0 #10192e}.quiz-option:hover{background:#fff2a9}.pixel-pop{position:absolute;z-index:9;pointer-events:none;color:#fff;font-weight:900;animation:popUp .65s ease-out forwards}@keyframes popUp{to{transform:translateY(-50px);opacity:0}}
     @media(max-width:900px){
       .hero{grid-template-columns:1fr}.world{min-height:230px}.activities{grid-template-columns:repeat(2,1fr)}
       .activity-card:last-child{grid-column:1/-1}.activity-card{min-height:190px}
+      .start-hero{grid-template-columns:1fr;min-height:auto}.start-world{min-height:330px}.world-map{min-height:800px}.region.forest{left:5%}.region.mine{left:auto;right:5%}.region.castle{left:7%;right:auto;top:43%}.region.island{left:auto;right:7%;bottom:20%}.region.village{left:50%;right:auto;bottom:2%;transform:translateX(-50%)}.region.village:hover{transform:translate(-50%,-8px)}
     }
     @media(max-width:600px){
       .app{background:linear-gradient(180deg,#dff4ff 0 500px,var(--cloud) 500px)}
@@ -125,6 +132,7 @@
       .game-board{height:56vh;min-height:360px}.result-card{padding:27px 16px;margin-top:25px}.result-stats{gap:7px}.result-stat strong{font-size:21px}
       .result-actions{flex-direction:column}
       .profile-grid{grid-template-columns:1fr}.avatar-stage{min-height:215px}.profile-modal{padding:25px 17px}.profile-controls{max-width:360px;width:100%;margin:auto}
+      .start-hero{display:block;padding:14px 0 35px}.start-hero:before{inset:0}.start-copy{padding:35px 24px}.start-copy h1{font-size:42px}.start-world{min-height:310px}.start-actions{flex-direction:column}.start-actions .btn{width:100%}.world-map{min-height:1000px}.region{width:158px;min-height:138px}.region.forest{left:4%;top:14%}.region.mine{right:4%;top:14%}.region.castle{left:4%;top:43%}.region.island{right:4%;bottom:25%}.region.village{bottom:3%}.map-profile{top:37%;transform:translate(-50%,-50%) scale(.4)}.game-hudbar{grid-template-columns:1fr 1fr}.hud-profile{grid-column:1/-1}.hotbar{gap:3px;padding:6px}.tool-slot{min-height:44px;font-size:18px}.tool-slot:nth-child(6),.tool-slot:nth-child(8){display:none}.mission-board{padding:72px 14px 18px;min-height:540px}.drag-layout{grid-template-columns:1fr;gap:16px}.drag-items,.drop-zones{grid-template-columns:1fr 1fr}.quiz-options{grid-template-columns:1fr}.typing-stage{padding-top:25px}
     }
     @media(prefers-reduced-motion:reduce){
       *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
@@ -151,100 +159,117 @@
 
     <main id="main">
       <section class="screen" id="homeScreen" aria-labelledby="homeTitle">
-        <div class="hero">
-          <div class="hero-copy">
-            <p class="eyebrow">⭐ 수업을 마친 탐험가를 위한 시간</p>
-            <h1 id="homeTitle">오늘의 <em>10분 플레이</em>를<br>시작해 볼까요?</h1>
-            <p>게임처럼 재미있게 놀면서 마우스와 키보드 실력을 키워요.</p>
-            <div class="timer-chip"><span aria-hidden="true">⏱</span> 남은 자유시간 <strong>10분</strong></div>
+        <div class="start-hero">
+          <div class="start-copy">
+            <p class="eyebrow">빛을 되찾는 10분 블록 모험</p>
+            <h1 id="homeTitle">컴퓨터<br><em>탐험대</em></h1>
+            <p>숲·광산·성·섬·마을을 탐험하며 컴퓨터 실력을 키워요.</p>
+            <div class="start-actions">
+              <button class="btn" id="exploreBtn" type="button">▶ 탐험 시작</button>
+              <button class="btn secondary" id="startProfileBtn" type="button">탐험가 꾸미기</button>
+              <button class="btn secondary" id="startTeacherBtn" type="button">선생님 설정</button>
+            </div>
           </div>
-          <div class="world" aria-label="컴퓨터 친구가 기다리는 블록 마을">
-            <div class="cloud one"></div><div class="cloud two"></div>
-            <div class="pc-pal" aria-hidden="true"><div class="pc-face"><div class="pc-screen"><i></i><i></i></div></div><div class="pc-base"></div></div>
-            <div class="block a"></div><div class="block b"></div><div class="block c"></div>
+          <div class="start-world" aria-label="탐험가가 기다리는 입체 블록 세계">
+            <div class="voxel-land" aria-hidden="true"></div>
+            <div class="voxel-tower one" aria-hidden="true"></div><div class="voxel-tower two" aria-hidden="true"></div>
+            <div class="voxel-tree a" aria-hidden="true"></div><div class="voxel-tree b" aria-hidden="true"></div>
+            <div class="pixel-avatar boy start-avatar" data-avatar-preview aria-hidden="true"><div class="hair"></div><div class="avatar-head"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></div><div class="avatar-body"></div><i class="arm left"></i><i class="arm right"></i><i class="leg left"></i><i class="leg right"></i></div>
           </div>
-        </div>
-
-        <div class="section-head">
-          <div><h2>어디로 탐험할까요?</h2><p>하고 싶은 활동을 하나 골라요.</p></div>
-          <span class="recommend">오늘의 추천 · 비밀숲</span>
-        </div>
-        <div class="activities" aria-label="활동 선택">
-          <button class="activity-card primary" type="button" data-activity="click">
-            <span class="art" aria-hidden="true">★</span><h3>비밀숲 별 사냥</h3><p>움직이는 별과 노란 보너스별을 눌러 많이 모아요.</p><span class="tag">지금 플레이</span>
-          </button>
-          <button class="activity-card" type="button" data-activity="drag" aria-disabled="true">
-            <span class="art" aria-hidden="true">↔</span><h3>드래그 광산</h3><p>블록을 알맞은 곳으로 옮겨요.</p><span class="tag">다음 미션</span>
-          </button>
-          <button class="activity-card" type="button" data-activity="ko" aria-disabled="true">
-            <span class="art" aria-hidden="true">가</span><h3>한글 타자 왕국</h3><p>쉬운 낱말을 또박또박 입력해요.</p><span class="tag">준비 중</span>
-          </button>
-          <button class="activity-card" type="button" data-activity="en" aria-disabled="true">
-            <span class="art" aria-hidden="true">A</span><h3>영문 타자 섬</h3><p>알파벳과 짧은 단어를 입력해요.</p><span class="tag">준비 중</span>
-          </button>
-          <button class="activity-card" type="button" data-activity="basic" aria-disabled="true">
-            <span class="art" aria-hidden="true">⌘</span><h3>기초 마을</h3><p>파일과 폴더, 아이콘의 역할을 찾아요.</p><span class="tag">준비 중</span>
-          </button>
         </div>
         <p class="footer-note">광고도, 외부 사이트 이동도 없어요. 실명 대신 별칭을 쓰고 기록은 이 브라우저에만 저장해요.</p>
+      </section>
+
+      <section class="screen map-screen" id="mapScreen" aria-labelledby="mapTitle" hidden>
+        <div class="map-heading"><h1 id="mapTitle">블록 탐험 지도</h1><p>연습하고 싶은 지역을 선택해요.</p></div>
+        <div class="world-map" aria-label="다섯 개 교육 지역이 연결된 블록 세계 지도">
+          <button class="small-btn map-back" id="mapBack" type="button">← 시작 화면</button>
+          <div class="map-path" aria-hidden="true"></div>
+          <button class="region forest" type="button" data-activity="click"><span class="region-art" aria-hidden="true">◆</span><strong>빛 블록 숲</strong><span>마우스 클릭</span></button>
+          <button class="region mine" type="button" data-activity="drag"><span class="region-art" aria-hidden="true">⛏</span><strong>정리 광산</strong><span>드래그·분류</span></button>
+          <button class="region castle" type="button" data-activity="ko"><span class="region-art" aria-hidden="true">가</span><strong>한글 건축 성</strong><span>한글 타자</span></button>
+          <button class="region island" type="button" data-activity="en"><span class="region-art" aria-hidden="true">A</span><strong>영문 항해 섬</strong><span>영문 타자</span></button>
+          <button class="region village" type="button" data-activity="basic"><span class="region-art" aria-hidden="true">⌘</span><strong>컴퓨터 수리 마을</strong><span>컴퓨터 기초</span></button>
+          <div class="pixel-avatar boy map-profile" data-avatar-preview aria-hidden="true"><div class="hair"></div><div class="avatar-head"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></div><div class="avatar-body"></div><i class="arm left"></i><i class="arm right"></i><i class="leg left"></i><i class="leg right"></i></div>
+        </div>
       </section>
 
       <section class="screen" id="difficultyScreen" aria-labelledby="difficultyTitle" hidden>
         <div class="choice-panel">
           <button class="back" type="button" id="difficultyBack">← 활동 다시 고르기</button>
           <div style="clear:both"></div>
-          <div class="art-large" aria-hidden="true">★</div>
-          <h2 id="difficultyTitle">비밀숲 탐험 레벨을 골라요</h2>
-          <p>별을 모아 다음 레벨을 열어 보세요!</p>
+          <div class="art-large" aria-hidden="true">◆</div>
+          <h2 id="difficultyTitle">빛 블록 숲 레벨을 골라요</h2>
+          <p>빛 에너지 큐브를 모아 다음 레벨을 열어 보세요!</p>
           <div class="levels">
-            <button class="level" type="button" data-level="easy"><strong>🌱 레벨 1 · 새싹</strong><span>35초 · 크고 느린 별 3개 · 5개면 레벨업</span></button>
-            <button class="level" type="button" data-level="normal"><strong>🌳 레벨 2 · 탐험가</strong><span>35초 · 움직이는 별 4개 · 12개면 레벨업</span></button>
-            <button class="level" type="button" data-level="hard"><strong>🚀 레벨 3 · 마스터</strong><span>40초 · 움직이는 별 5개 · 최고 기록 도전</span></button>
+            <button class="level" type="button" data-level="easy"><strong>🌱 레벨 1 · 새싹</strong><span>35초 · 큰 빛 큐브 3개 · 5개면 레벨업</span></button>
+            <button class="level" type="button" data-level="normal"><strong>🌳 레벨 2 · 탐험가</strong><span>35초 · 빛 큐브 4개 · 12개면 레벨업</span></button>
+            <button class="level" type="button" data-level="hard"><strong>🚀 레벨 3 · 마스터</strong><span>40초 · 빛 큐브 5개 · 최고 기록 도전</span></button>
           </div>
         </div>
       </section>
 
       <section class="screen game-shell" id="gameScreen" aria-labelledby="gameTitle" hidden>
         <div class="game-top">
-          <h2 id="gameTitle">★ 비밀숲 <small id="levelLabel">레벨 1 · 새싹</small></h2>
+          <h2 id="gameTitle">◆ 빛 블록 숲 <small id="levelLabel">레벨 1 · 새싹</small></h2>
           <div class="game-controls">
             <button class="small-btn" id="pauseBtn" type="button" aria-pressed="false">⏸ 일시정지</button>
-            <button class="small-btn" id="homeBtn" type="button">⌂ 홈</button>
+            <button class="small-btn" id="homeBtn" type="button">⌂ 지도</button>
           </div>
         </div>
-        <div class="hud" aria-label="게임 상태">
+        <div class="game-hudbar" aria-label="게임 상태">
+          <div class="stat hud-profile"><span class="avatar-mini-wrap" aria-hidden="true"><span class="pixel-avatar mini boy" data-avatar-preview><span class="hair"></span><span class="avatar-head"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span><span class="avatar-body"></span><i class="arm left"></i><i class="arm right"></i><i class="leg left"></i><i class="leg right"></i></span></span><span id="gameExplorerName">탐험가</span></div>
           <div class="stat"><span>점수</span><strong id="score">0</strong></div>
           <div class="stat time"><span>남은 시간</span><strong id="time">10:00</strong></div>
-          <div class="stat"><span>모은 별</span><strong id="hits">0개</strong></div>
+          <div class="stat"><span>빛 블록</span><strong id="hits">0개</strong></div>
         </div>
         <div class="progress-wrap" role="progressbar" aria-label="미션 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
           <div class="progress" id="progress"></div>
         </div>
-        <div class="game-board" id="gameBoard" aria-label="별 클릭 게임 영역">
-          <p class="board-help" id="boardHelp">다음 레벨까지 별 5개 · 노란 별은 별 3개!</p>
-          <div class="targets" id="targets" aria-label="움직이는 블록별 모음"></div>
+        <div class="game-board forest-scene" id="gameBoard" aria-label="빛 에너지 큐브 클릭 게임 영역">
+          <p class="board-help" id="boardHelp">다음 레벨까지 빛 블록 5개 · 황금 큐브는 3개!</p>
+          <div class="crosshair" aria-hidden="true"></div>
+          <div class="targets" id="targets" aria-label="움직이는 빛 에너지 큐브 모음"></div>
+          <div class="forest-lamps" id="forestLamps" aria-label="복구된 숲 등불"></div>
           <div class="pause-cover" id="pauseCover" hidden><div><strong>잠깐 쉬는 중</strong><span>일시정지 버튼을 누르면 다시 시작해요.</span></div></div>
         </div>
+        <div class="hotbar" aria-label="빛 블록 숲 도구 모음">
+          <div class="tool-slot active" title="현재 미션">◆<small>1</small></div><div class="tool-slot" title="빛 블록">✦<small>2</small></div><div class="tool-slot" title="광석 블록">⬟<small>3</small></div><div class="tool-slot" title="성벽 블록">▦<small>4</small></div><div class="tool-slot" title="다리 블록">═<small>5</small></div><div class="tool-slot" title="지식 블록">▣<small>6</small></div><div class="tool-slot" title="도움말">?<small>7</small><button type="button" id="forestHelpBtn" aria-label="빛 블록 숲 도움말">도움말</button></div><div class="tool-slot" title="빈 슬롯">·<small>8</small></div><div class="tool-slot" title="탐험 지도">⌂<small>9</small><button type="button" id="hotbarMapBtn" aria-label="탐험 지도로 이동">탐험 지도</button></div>
+        </div>
+      </section>
+
+      <section class="screen mission-shell" id="missionScreen" aria-labelledby="missionGameTitle" hidden>
+        <div class="game-top">
+          <h2 id="missionGameTitle">정리 광산</h2>
+          <div class="game-controls"><button class="small-btn" id="missionPauseBtn" type="button" aria-pressed="false">⏸ 일시정지</button><button class="small-btn" id="missionMapBtn" type="button">⌂ 지도</button></div>
+        </div>
+        <div class="game-hudbar" aria-label="미션 상태">
+          <div class="stat hud-profile"><span class="avatar-mini-wrap" aria-hidden="true"><span class="pixel-avatar mini boy" data-avatar-preview><span class="hair"></span><span class="avatar-head"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span><span class="avatar-body"></span><i class="arm left"></i><i class="arm right"></i><i class="leg left"></i><i class="leg right"></i></span></span><span id="missionExplorerName">탐험가</span></div>
+          <div class="stat"><span>점수</span><strong id="missionScore">0</strong></div><div class="stat time"><span>진행</span><strong id="missionProgress">0/5</strong></div><div class="stat"><span>연속 성공</span><strong id="missionCombo">0</strong></div>
+        </div>
+        <div class="progress-wrap" role="progressbar" id="missionProgressbar" aria-label="미션 진행률" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress" id="missionProgressFill"></div></div>
+        <div class="mission-board mine-world" id="missionBoard"><h3 class="mission-title" id="missionGuide">블록을 알맞은 창고로 옮겨요.</h3><div id="missionContent"></div><div class="pause-cover" id="missionPauseCover" hidden><div><strong>잠깐 쉬는 중</strong><span>계속하기 버튼을 누르면 다시 시작해요.</span></div></div></div>
+        <div class="hotbar" aria-label="교육 미션 도구 모음"><div class="tool-slot active">◆<small>1</small></div><div class="tool-slot">✦<small>2</small></div><div class="tool-slot">⬟<small>3</small></div><div class="tool-slot">▦<small>4</small></div><div class="tool-slot">═<small>5</small></div><div class="tool-slot">▣<small>6</small></div><div class="tool-slot">?<small>7</small><button type="button" id="missionHelpBtn" aria-label="현재 미션 도움말">도움말</button></div><div class="tool-slot">·<small>8</small></div><div class="tool-slot">⌂<small>9</small><button type="button" id="missionHotbarMapBtn" aria-label="탐험 지도로 이동">탐험 지도</button></div></div>
       </section>
 
       <section class="screen" id="resultScreen" aria-labelledby="resultTitle" hidden>
         <div class="result-card">
-          <div class="badge" aria-hidden="true">⭐</div>
+          <div class="badge" id="resultBadge" aria-hidden="true">◆</div>
           <h2 id="resultTitle">비밀숲 탐험 완료!</h2>
           <p class="cheer" id="resultMessage">오늘도 컴퓨터 실력이 자랐어요!</p>
           <div class="result-stats">
             <div class="result-stat"><span>획득 점수</span><strong id="resultScore">0점</strong></div>
-            <div class="result-stat"><span>정확도</span><strong id="resultAccuracy">100%</strong></div>
-            <div class="result-stat"><span>평균 반응</span><strong id="resultReaction">0초</strong></div>
+            <div class="result-stat"><span id="resultAccuracyLabel">정확도</span><strong id="resultAccuracy">100%</strong></div>
+            <div class="result-stat"><span id="resultMetricLabel">평균 반응</span><strong id="resultReaction">0초</strong></div>
           </div>
-          <div class="reward-box"><span class="reward-icon" id="rewardIcon" aria-hidden="true">⭐</span><span><small>이번 탐험 보상 · 별 <b id="rewardStars">0</b>개</small><strong id="rewardName">첫걸음 별 스티커</strong></span></div>
+          <div class="reward-box"><span class="reward-icon" id="rewardIcon" aria-hidden="true">◆</span><span><small>이번 탐험 보상 · 블록 <b id="rewardStars">0</b>개</small><strong id="rewardName">첫걸음 빛 블록</strong></span></div>
           <div class="level-up" id="levelUpMessage" hidden>🎉 다음 레벨이 열렸어요!</div>
-          <div class="skill-box">오늘 연습한 능력 · 마우스 이동과 정확한 클릭</div>
+          <div class="skill-box" id="resultSkill">오늘 연습한 능력 · 마우스 이동과 정확한 클릭</div>
           <p class="tidy">🧹 이제 키보드와 마우스를 바르게 놓고 자리를 정리해요.</p>
           <div class="result-actions">
             <button class="btn" type="button" id="retryBtn">↻ 다시 하기</button>
             <button class="btn" type="button" id="nextLevelBtn" hidden>다음 레벨 도전 →</button>
-            <button class="btn secondary" type="button" id="resultHomeBtn">⌂ 처음으로</button>
+            <button class="btn secondary" type="button" id="resultHomeBtn">⌂ 탐험 지도</button>
           </div>
         </div>
       </section>
@@ -256,7 +281,7 @@
     <section class="profile-modal">
       <button class="modal-close" id="profileClose" type="button" aria-label="캐릭터 꾸미기 닫기">×</button>
       <h2 id="profileTitle">나만의 탐험가 만들기</h2>
-      <p>별칭과 캐릭터를 고르고 비밀숲으로 출발해요!</p>
+      <p>별칭과 캐릭터를 고르고 블록 세계로 출발해요!</p>
       <div class="profile-grid">
         <div class="avatar-stage" aria-label="선택한 캐릭터 미리보기">
           <div class="pixel-avatar boy" data-avatar-preview aria-hidden="true"><div class="hair"></div><div class="avatar-head"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></div><div class="avatar-body"></div><i class="arm left"></i><i class="arm right"></i><i class="leg left"></i><i class="leg right"></i></div>
@@ -295,8 +320,8 @@
       "use strict";
       const $ = (selector) => document.querySelector(selector);
       const screens = {
-        home: $("#homeScreen"), difficulty: $("#difficultyScreen"),
-        game: $("#gameScreen"), result: $("#resultScreen")
+        home: $("#homeScreen"), map: $("#mapScreen"), difficulty: $("#difficultyScreen"),
+        game: $("#gameScreen"), mission: $("#missionScreen"), result: $("#resultScreen")
       };
       const levels = {
         easy: { order: 1, label: "레벨 1 · 새싹", duration: 35000, starCount: 3, moveInterval: 1800, moveSpeed: 1000, size: 104, points: 100, unlockAt: 5, next: "normal" },
@@ -304,12 +329,37 @@
         hard: { order: 3, label: "레벨 3 · 마스터", duration: 40000, starCount: 5, moveInterval: 780, moveSpeed: 520, size: 62, points: 160, unlockAt: 16, next: null }
       };
       const state = {
-        level: "easy", score: 0, hits: 0, successClicks: 0, misses: 0, paused: false,
+        activity: "click", level: "easy", score: 0, hits: 0, successClicks: 0, misses: 0, paused: false,
         remaining: 35000, endAt: 0, timerId: null, moveTimerId: null,
         reactions: [], sound: false, active: false,
         unlockedLevel: 1, nextLevel: null,
-        profile: { nickname: "", avatarType: "boy", hair: "#3c2b29", outfit: "#4568f2", saved: false }
+        profile: { nickname: "", avatarType: "boy", hair: "#3c2b29", outfit: "#4568f2", saved: false },
+        mission: { activity: "drag", score: 0, completed: 0, correct: 0, attempts: 0, combo: 0, maxCombo: 0, index: 0, selected: "", startedAt: 0, paused: false }
       };
+      const missionConfigs = {
+        drag: { title: "⛏ 정리 광산", board: "mine-world", guide: "물건을 선택해 알맞은 보관 장소로 옮겨요.", skill: "드래그와 파일 분류", icon: "⬟", reward: "정리 광석 블록" },
+        ko: { title: "가 한글 건축 성", board: "ko-world", guide: "낱말을 정확히 입력해 성을 완성해요.", skill: "한글 타자 정확도", icon: "▦", reward: "한글 성벽 블록" },
+        en: { title: "A 영문 항해 섬", board: "en-world", guide: "알파벳과 단어를 입력해 다리를 완성해요.", skill: "영문 타자 정확도", icon: "═", reward: "항해 다리 블록" },
+        basic: { title: "⌘ 컴퓨터 수리 마을", board: "basic-world", guide: "알맞은 지식 블록을 골라 마을을 수리해요.", skill: "컴퓨터 기초 지식", icon: "▣", reward: "지식 복구 블록" }
+      };
+      const dragItems = [
+        { id: "ore", label: "◆ 수정 광석", target: "oreBox", place: "광석 창고" },
+        { id: "tool", label: "⛏ 작업 도구", target: "toolBox", place: "도구 보관함" },
+        { id: "file", label: "▤ 수업 파일", target: "folder", place: "수업 폴더" },
+        { id: "trash", label: "⌫ 삭제 파일", target: "trashBox", place: "재활용 상자" },
+        { id: "image", label: "▧ 그림 파일", target: "imageBox", place: "그림 폴더" },
+        { id: "show", label: "▣ 발표 파일", target: "showBox", place: "발표 폴더" }
+      ];
+      const koWords = ["산","집","별","물","나무","학교","친구","토끼","바다","하늘","컴퓨터","키보드","마우스","파일","폴더","저장"];
+      const enWords = ["A","S","D","F","J","K","L","CAT","DOG","SUN","STAR","GAME","MOUSE","FILE","SAVE","CLICK","BLOCK"];
+      const quizItems = [
+        { q: "화면의 화살표를 움직이는 도구는?", a: "마우스", choices: ["마우스","스피커","프린터","폴더"] },
+        { q: "글자를 입력할 때 사용하는 도구는?", a: "키보드", choices: ["모니터","키보드","마우스패드","휴지통"] },
+        { q: "여러 파일을 모아 두는 것은?", a: "폴더", choices: ["폴더","마우스","창문","전원"] },
+        { q: "작업한 내용을 보관하는 기능은?", a: "저장", choices: ["닫기","삭제","저장","인쇄 취소"] },
+        { q: "발표 자료를 만드는 프로그램은?", a: "한쇼", choices: ["한셀","한쇼","그림판","계산기"] },
+        { q: "표와 계산을 연습하는 프로그램은?", a: "한셀", choices: ["한글","한쇼","한셀","메모장"] }
+      ];
       let toastTimer;
 
       function showScreen(name) {
@@ -331,6 +381,8 @@
         const profile = state.profile;
         const displayName = profile.saved ? profile.nickname + " 탐험가" : "내 캐릭터";
         $("#profileGreeting").textContent = displayName;
+        $("#gameExplorerName").textContent = displayName;
+        $("#missionExplorerName").textContent = displayName;
         $("#profileBtn").setAttribute("aria-label", displayName + " 캐릭터 꾸미기");
         document.querySelectorAll("[data-avatar-preview]").forEach((avatar) => {
           avatar.classList.toggle("boy", profile.avatarType === "boy");
@@ -416,10 +468,11 @@
         $("#time").textContent = formatTime(state.remaining);
         $("#hits").textContent = state.hits + "개";
         if (starsNeeded > 0) {
-          $("#boardHelp").textContent = (config.next ? "다음 레벨까지" : "최고 목표까지") + " 별 " + starsNeeded + "개 더 · 노란 별은 별 3개!";
+          $("#boardHelp").textContent = (config.next ? "다음 레벨까지" : "최고 목표까지") + " 빛 블록 " + starsNeeded + "개 더 · 황금 큐브는 3개!";
         } else {
           $("#boardHelp").textContent = config.next ? "🎉 목표 달성! 다음 레벨에 도전할 수 있어요." : "👑 최고 목표를 달성했어요!";
         }
+        Array.from($("#forestLamps").children).forEach((lamp, index) => lamp.classList.toggle("lit", index < Math.min(config.unlockAt, state.hits)));
         $("#progress").style.width = percent + "%";
         $(".progress-wrap").setAttribute("aria-valuenow", String(percent));
       }
@@ -429,7 +482,7 @@
           const config = levels[button.dataset.level];
           const locked = config.order > state.unlockedLevel;
           button.disabled = locked;
-          button.setAttribute("aria-label", locked ? config.label + " 잠김. 이전 레벨에서 별을 모아 열 수 있어요." : config.label + " 시작");
+          button.setAttribute("aria-label", locked ? config.label + " 잠김. 이전 레벨에서 빛 블록을 모아 열 수 있어요." : config.label + " 시작");
         });
       }
 
@@ -485,8 +538,21 @@
         state.hits += starsEarned;
         state.score += (config.points + speedBonus) * scoreMultiplier;
         beep(); updateHud();
-        if (isBonus) toast("노란 보너스별! 별 3개와 점수 3배를 얻었어요!");
+        showPixelPop(event.clientX, event.clientY, "+" + starsEarned + " 빛 블록");
+        if (isBonus) toast("황금 에너지 큐브! 빛 블록 3개와 점수 3배를 얻었어요!");
         positionStar(star, true);
+      }
+
+      function showPixelPop(clientX, clientY, message) {
+        const board = $("#gameBoard");
+        const rect = board.getBoundingClientRect();
+        const pop = document.createElement("span");
+        pop.className = "pixel-pop";
+        pop.textContent = message;
+        pop.style.left = Math.max(8, clientX - rect.left) + "px";
+        pop.style.top = Math.max(60, clientY - rect.top) + "px";
+        board.appendChild(pop);
+        setTimeout(() => pop.remove(), 700);
       }
 
       function createStars() {
@@ -498,9 +564,9 @@
           const isBonus = index === 0;
           star.className = "target" + (isBonus ? " bonus-star" : "");
           star.type = "button";
-          star.textContent = "★";
+          star.textContent = "◆";
           star.dataset.bonus = String(isBonus);
-          star.setAttribute("aria-label", isBonus ? "노란 보너스별 누르기. 별 3개와 점수 3배" : "움직이는 블록별 " + (index + 1) + " 누르기");
+          star.setAttribute("aria-label", isBonus ? "황금 에너지 큐브 누르기. 빛 블록 3개와 점수 3배" : "움직이는 빛 에너지 큐브 " + (index + 1) + " 누르기");
           star.addEventListener("click", hitStar);
           container.appendChild(star);
           positionStar(star, index === 0);
@@ -515,6 +581,7 @@
           return;
         }
         state.level = levelName;
+        state.activity = "click";
         state.nextLevel = null;
         state.score = 0; state.hits = 0; state.successClicks = 0; state.misses = 0; state.reactions = [];
         state.paused = false; state.active = true; state.remaining = config.duration;
@@ -523,6 +590,7 @@
         $("#pauseBtn").textContent = "⏸ 일시정지";
         $("#pauseBtn").setAttribute("aria-pressed", "false");
         $("#pauseCover").hidden = true;
+        $("#forestLamps").replaceChildren(...Array.from({ length: config.unlockAt }, () => document.createElement("i")));
         showScreen("game");
         updateHud();
         requestAnimationFrame(createStars);
@@ -536,10 +604,10 @@
       }
 
       function getReward(stars) {
-        if (stars >= 20) return { icon: "👑", name: "황금 별 왕관" };
-        if (stars >= 14) return { icon: "🛡️", name: "은빛 별 방패" };
-        if (stars >= 8) return { icon: "🏅", name: "초록 탐험 배지" };
-        return { icon: "⭐", name: "첫걸음 별 스티커" };
+        if (stars >= 20) return { icon: "👑", name: "황금빛 복구 블록" };
+        if (stars >= 14) return { icon: "▣", name: "은빛 등불 블록" };
+        if (stars >= 8) return { icon: "◆", name: "초록 생명 블록" };
+        return { icon: "✦", name: "첫걸음 빛 블록" };
       }
 
       function finishGame() {
@@ -568,21 +636,25 @@
           ? (state.reactions.reduce((sum, value) => sum + value, 0) / state.reactions.length / 1000).toFixed(1)
           : "0.0";
         const reward = getReward(state.hits);
-        $("#resultTitle").textContent = availableNextLevel ? "레벨 업!" : (state.level === "hard" && reachedGoal ? "비밀숲 정복!" : "비밀숲 탐험 완료!");
+        $("#resultTitle").textContent = availableNextLevel ? "숲의 등불 복구!" : (state.level === "hard" && reachedGoal ? "빛 블록 숲 완성!" : "빛 블록 탐험 완료!");
         const explorerName = state.profile.nickname ? state.profile.nickname + " 탐험가, " : "";
         const starsNeeded = Math.max(0, config.unlockAt - state.hits);
         const retryGuide = config.next
-          ? "별 " + starsNeeded + "개를 더 모으면 다음 레벨로 갈 수 있어요!"
-          : "별 " + starsNeeded + "개를 더 모으면 최고 목표를 달성해요!";
-        $("#resultMessage").textContent = explorerName + (reachedGoal ? "목표 별 " + config.unlockAt + "개를 달성했어요!" : retryGuide);
+          ? "빛 블록 " + starsNeeded + "개를 더 모으면 다음 레벨로 갈 수 있어요!"
+          : "빛 블록 " + starsNeeded + "개를 더 모으면 최고 목표를 달성해요!";
+        $("#resultMessage").textContent = explorerName + (reachedGoal ? "목표 빛 블록 " + config.unlockAt + "개를 달성했어요!" : retryGuide);
         $("#resultScore").textContent = state.score.toLocaleString("ko-KR") + "점";
+        $("#resultAccuracyLabel").textContent = "정확도";
         $("#resultAccuracy").textContent = accuracy + "%";
+        $("#resultMetricLabel").textContent = "평균 반응";
         $("#resultReaction").textContent = average + "초";
         $("#rewardIcon").textContent = reward.icon;
         $("#rewardStars").textContent = state.hits;
         $("#rewardName").textContent = reward.name;
+        $("#resultBadge").textContent = "◆";
+        $("#resultSkill").textContent = "오늘 연습한 능력 · 마우스 이동과 정확한 클릭";
         $("#levelUpMessage").hidden = !availableNextLevel;
-        $("#levelUpMessage").textContent = availableNextLevel ? "🎉 별 " + config.unlockAt + "개 달성! " + levels[availableNextLevel].label + "에 갈 수 있어요." : "";
+        $("#levelUpMessage").textContent = availableNextLevel ? "🎉 빛 블록 " + config.unlockAt + "개 달성! " + levels[availableNextLevel].label + "에 갈 수 있어요." : "";
         $("#nextLevelBtn").hidden = !availableNextLevel;
         if (availableNextLevel) $("#nextLevelBtn").textContent = levels[availableNextLevel].label + " 바로 도전 →";
         try {
@@ -596,10 +668,211 @@
         showScreen("result");
       }
 
+      function missionTotal(activity) {
+        if (activity === "drag") return dragItems.length;
+        if (activity === "ko") return koWords.length;
+        if (activity === "en") return enWords.length;
+        return quizItems.length;
+      }
+
+      function updateMissionHud() {
+        const mission = state.mission;
+        const total = missionTotal(mission.activity);
+        const percent = Math.round((mission.completed / total) * 100);
+        $("#missionScore").textContent = mission.score.toLocaleString("ko-KR");
+        $("#missionProgress").textContent = mission.completed + "/" + total;
+        $("#missionCombo").textContent = mission.combo;
+        $("#missionProgressFill").style.width = percent + "%";
+        $("#missionProgressbar").setAttribute("aria-valuenow", String(percent));
+      }
+
+      function missionSuccess(points) {
+        const mission = state.mission;
+        mission.correct += 1;
+        mission.attempts += 1;
+        mission.completed += 1;
+        mission.combo += 1;
+        mission.maxCombo = Math.max(mission.maxCombo, mission.combo);
+        mission.score += points + mission.combo * 20;
+        beep();
+        updateMissionHud();
+      }
+
+      function missionMiss(message) {
+        state.mission.attempts += 1;
+        state.mission.combo = 0;
+        updateMissionHud();
+        toast(message);
+      }
+
+      function createBuildView(total, className) {
+        const view = document.createElement("div");
+        view.className = "build-view";
+        const build = document.createElement("div");
+        build.className = className;
+        for (let index = 0; index < total; index += 1) {
+          const block = document.createElement("i");
+          block.className = "build-block";
+          build.appendChild(block);
+        }
+        view.appendChild(build);
+        return view;
+      }
+
+      function lightNextBuildBlock() {
+        const blocks = Array.from(document.querySelectorAll("#missionContent .build-block"));
+        blocks.forEach((block, index) => block.classList.toggle("built", index < state.mission.completed));
+      }
+
+      function renderDragMission() {
+        const content = $("#missionContent");
+        content.replaceChildren();
+        const layout = document.createElement("div");
+        layout.className = "drag-layout";
+        const items = document.createElement("div"); items.className = "drag-items"; items.setAttribute("aria-label", "옮길 물건");
+        const zones = document.createElement("div"); zones.className = "drop-zones"; zones.setAttribute("aria-label", "보관 장소");
+        dragItems.forEach((item) => {
+          const token = document.createElement("button");
+          token.type = "button"; token.className = "drag-token"; token.textContent = item.label; token.draggable = true; token.dataset.item = item.id;
+          token.addEventListener("click", () => {
+            if (state.mission.paused) return;
+            state.mission.selected = item.id;
+            document.querySelectorAll(".drag-token").forEach((node) => node.classList.toggle("selected", node === token));
+            toast(item.label + " 선택! 알맞은 창고를 눌러요.");
+          });
+          token.addEventListener("dragstart", (event) => { if (!state.mission.paused) event.dataTransfer.setData("text/plain", item.id); });
+          items.appendChild(token);
+          const zone = document.createElement("button");
+          zone.type = "button"; zone.className = "drop-zone"; zone.textContent = "□ " + item.place; zone.dataset.target = item.target;
+          zone.addEventListener("dragover", (event) => event.preventDefault());
+          zone.addEventListener("drop", (event) => { event.preventDefault(); attemptDrop(event.dataTransfer.getData("text/plain"), item.target); });
+          zone.addEventListener("click", () => attemptDrop(state.mission.selected, item.target));
+          zones.appendChild(zone);
+        });
+        layout.append(items, zones); content.appendChild(layout);
+      }
+
+      function attemptDrop(itemId, targetId) {
+        if (state.mission.paused || !itemId) { toast("먼저 옮길 물건을 선택해요."); return; }
+        const item = dragItems.find((entry) => entry.id === itemId);
+        if (!item || document.querySelector('[data-item="' + itemId + '"]').classList.contains("done")) return;
+        if (item.target !== targetId) { missionMiss("조금 다른 장소예요. 물건 이름을 다시 살펴봐요!"); return; }
+        missionSuccess(150);
+        document.querySelector('[data-item="' + itemId + '"]').classList.add("done");
+        document.querySelector('[data-target="' + targetId + '"]').classList.add("correct");
+        document.querySelector('[data-target="' + targetId + '"]').textContent = "✓ " + item.place + " 복구";
+        state.mission.selected = "";
+        toast("광산 창고 한 곳을 복구했어요!");
+        if (state.mission.completed === dragItems.length) finishMission();
+      }
+
+      function renderTypingMission(activity) {
+        const words = activity === "ko" ? koWords : enWords;
+        const content = $("#missionContent"); content.replaceChildren();
+        const stage = document.createElement("div"); stage.className = "typing-stage";
+        stage.appendChild(createBuildView(words.length, activity === "ko" ? "castle-build" : "bridge-build"));
+        const prompt = document.createElement("strong"); prompt.className = "prompt-word"; prompt.id = "promptWord";
+        const input = document.createElement("input"); input.className = "typing-input"; input.id = "typingInput"; input.type = "text"; input.autocomplete = "off"; input.spellcheck = false; input.setAttribute("aria-label", "보이는 낱말 입력");
+        const guide = document.createElement("span"); guide.className = "typing-guide"; guide.textContent = "보이는 글자를 입력하고 Enter를 눌러요.";
+        stage.append(prompt, input, guide); content.appendChild(stage);
+        showTypingWord();
+        input.addEventListener("input", () => {
+          if (state.mission.paused) return;
+          const answer = words[state.mission.index];
+          if (input.value.trim() === answer) completeTypingWord();
+        });
+        input.addEventListener("keydown", (event) => {
+          if (event.key === "Enter" && input.value.trim() !== words[state.mission.index]) {
+            missionMiss("천천히 글자를 다시 확인해 보세요."); input.select();
+          }
+        });
+        input.focus();
+      }
+
+      function showTypingWord() {
+        const words = state.mission.activity === "ko" ? koWords : enWords;
+        $("#promptWord").textContent = words[state.mission.index];
+        $("#typingInput").value = "";
+      }
+
+      function completeTypingWord() {
+        const words = state.mission.activity === "ko" ? koWords : enWords;
+        missionSuccess(120);
+        lightNextBuildBlock();
+        state.mission.index += 1;
+        toast(state.mission.activity === "ko" ? "성벽 블록을 쌓았어요!" : "다리 블록을 놓았어요!");
+        if (state.mission.index >= words.length) { finishMission(); return; }
+        showTypingWord(); $("#typingInput").focus();
+      }
+
+      function renderQuizMission() {
+        const content = $("#missionContent"); content.replaceChildren();
+        content.appendChild(createBuildView(quizItems.length, "village-build"));
+        const card = document.createElement("div"); card.className = "quiz-card"; card.innerHTML = '<h3 id="quizQuestion"></h3><div class="quiz-options" id="quizOptions"></div>';
+        content.appendChild(card); showQuizQuestion();
+      }
+
+      function showQuizQuestion() {
+        const item = quizItems[state.mission.index];
+        $("#quizQuestion").textContent = item.q;
+        const options = $("#quizOptions"); options.replaceChildren();
+        item.choices.forEach((choice) => {
+          const button = document.createElement("button"); button.type = "button"; button.className = "quiz-option"; button.textContent = choice;
+          button.addEventListener("click", () => answerQuiz(choice)); options.appendChild(button);
+        });
+      }
+
+      function answerQuiz(choice) {
+        if (state.mission.paused) return;
+        const item = quizItems[state.mission.index];
+        if (choice !== item.a) { missionMiss("다른 지식 블록을 골라 볼까요?"); return; }
+        missionSuccess(180); lightNextBuildBlock(); state.mission.index += 1; toast("마을 건물 한 곳을 수리했어요!");
+        if (state.mission.index >= quizItems.length) { finishMission(); return; }
+        showQuizQuestion();
+      }
+
+      function startMission(activity) {
+        const config = missionConfigs[activity]; if (!config) return;
+        state.activity = activity;
+        state.active = false;
+        clearInterval(state.timerId); clearInterval(state.moveTimerId);
+        state.mission = { activity, score: 0, completed: 0, correct: 0, attempts: 0, combo: 0, maxCombo: 0, index: 0, selected: "", startedAt: Date.now(), paused: false };
+        $("#missionGameTitle").textContent = config.title;
+        $("#missionGuide").textContent = config.guide;
+        $("#missionBoard").className = "mission-board " + config.board;
+        $("#missionPauseBtn").textContent = "⏸ 일시정지";
+        $("#missionPauseBtn").setAttribute("aria-pressed", "false");
+        $("#missionPauseCover").hidden = true;
+        $("#missionContent").inert = false;
+        showScreen("mission"); updateMissionHud();
+        if (activity === "drag") renderDragMission();
+        else if (activity === "ko" || activity === "en") renderTypingMission(activity);
+        else renderQuizMission();
+      }
+
+      function finishMission() {
+        const mission = state.mission;
+        const config = missionConfigs[mission.activity];
+        const accuracy = mission.attempts ? Math.round((mission.correct / mission.attempts) * 100) : 100;
+        const elapsed = Math.max(1, Math.round((Date.now() - mission.startedAt) / 1000));
+        $("#resultTitle").textContent = "미션 완료! " + config.title.replace(/^. /, "");
+        $("#resultMessage").textContent = (state.profile.nickname ? state.profile.nickname + " 탐험가, " : "") + "지역을 밝고 튼튼하게 복구했어요!";
+        $("#resultScore").textContent = mission.score.toLocaleString("ko-KR") + "점";
+        $("#resultAccuracyLabel").textContent = "정확도"; $("#resultAccuracy").textContent = accuracy + "%";
+        $("#resultMetricLabel").textContent = "완료 시간"; $("#resultReaction").textContent = elapsed + "초";
+        $("#resultBadge").textContent = config.icon; $("#rewardIcon").textContent = config.icon;
+        $("#rewardStars").textContent = mission.completed; $("#rewardName").textContent = config.reward;
+        $("#resultSkill").textContent = "오늘 연습한 능력 · " + config.skill;
+        $("#levelUpMessage").hidden = false; $("#levelUpMessage").textContent = "🎉 지역 복구 100% · 최고 연속 성공 " + mission.maxCombo + "회";
+        state.nextLevel = null; $("#nextLevelBtn").hidden = true;
+        try { localStorage.setItem("computer-explorer-last-result", JSON.stringify({ activity: mission.activity, score: mission.score, accuracy, completed: mission.completed, playedAt: new Date().toISOString() })); } catch (_) {}
+        showScreen("result");
+      }
+
       document.querySelectorAll("[data-activity]").forEach((button) => {
         button.addEventListener("click", () => {
           if (button.dataset.activity === "click") { updateLevelButtons(); showScreen("difficulty"); }
-          else toast("이 탐험지는 다음 업데이트에서 열려요. 비밀숲을 먼저 즐겨 보세요!");
+          else startMission(button.dataset.activity);
         });
       });
       document.querySelectorAll("[data-level]").forEach((button) => {
@@ -609,7 +882,7 @@
       $("#gameBoard").addEventListener("click", (event) => {
         if (!state.active || state.paused || event.target !== $("#gameBoard")) return;
         state.misses += 1;
-        toast("괜찮아요! 별을 다시 찾아보세요.");
+        toast("괜찮아요! 빛 에너지 큐브를 다시 찾아보세요.");
       });
       $("#pauseBtn").addEventListener("click", () => {
         if (!state.active) return;
@@ -630,16 +903,32 @@
         $("#pauseCover").hidden = !state.paused;
       });
 
-      function goHome() {
-        if (state.active && !window.confirm("지금 홈으로 돌아갈까요? 오늘 점수는 저장되지 않아요.")) return;
-        state.active = false; clearInterval(state.timerId); clearInterval(state.moveTimerId); showScreen("home");
+      function goMap() {
+        const missionRunning = !$("#missionScreen").hidden && state.mission.completed < missionTotal(state.mission.activity);
+        if ((state.active || missionRunning) && !window.confirm("지금 탐험 지도로 돌아갈까요? 이번 미션 기록은 저장되지 않아요.")) return;
+        state.active = false; clearInterval(state.timerId); clearInterval(state.moveTimerId); showScreen("map");
       }
-      $("#difficultyBack").addEventListener("click", () => showScreen("home"));
-      $("#homeBtn").addEventListener("click", goHome);
-      $("#resultHomeBtn").addEventListener("click", goHome);
-      $("#retryBtn").addEventListener("click", () => startGame(state.level));
+      $("#exploreBtn").addEventListener("click", () => showScreen("map"));
+      $("#mapBack").addEventListener("click", () => showScreen("home"));
+      $("#difficultyBack").addEventListener("click", () => showScreen("map"));
+      $("#homeBtn").addEventListener("click", goMap);
+      $("#hotbarMapBtn").addEventListener("click", goMap);
+      $("#missionMapBtn").addEventListener("click", goMap);
+      $("#missionHotbarMapBtn").addEventListener("click", goMap);
+      $("#resultHomeBtn").addEventListener("click", () => showScreen("map"));
+      $("#retryBtn").addEventListener("click", () => state.activity === "click" ? startGame(state.level) : startMission(state.activity));
       $("#nextLevelBtn").addEventListener("click", () => state.nextLevel && startGame(state.nextLevel));
+      $("#forestHelpBtn").addEventListener("click", () => toast("움직이는 빛 큐브를 눌러요. 황금 큐브는 빛 블록 3개와 점수 3배예요!"));
+      $("#missionHelpBtn").addEventListener("click", () => toast(missionConfigs[state.mission.activity].guide));
+      $("#missionPauseBtn").addEventListener("click", () => {
+        state.mission.paused = !state.mission.paused;
+        $("#missionPauseBtn").textContent = state.mission.paused ? "▶ 계속하기" : "⏸ 일시정지";
+        $("#missionPauseBtn").setAttribute("aria-pressed", String(state.mission.paused));
+        $("#missionPauseCover").hidden = !state.mission.paused;
+        $("#missionContent").inert = state.mission.paused;
+      });
       $("#profileBtn").addEventListener("click", () => openProfile(false));
+      $("#startProfileBtn").addEventListener("click", () => openProfile(false));
       $("#profileClose").addEventListener("click", closeProfile);
       $("#profileSave").addEventListener("click", saveProfile);
       $("#profileModal").addEventListener("click", (event) => {
@@ -662,6 +951,7 @@
       });
       $("#soundBtn").addEventListener("click", () => setSound(!state.sound));
       $("#teacherBtn").addEventListener("click", () => toast("교사용 시간·활동 설정은 다음 업데이트에서 열려요."));
+      $("#startTeacherBtn").addEventListener("click", () => toast("교사용 시간·활동 설정은 다음 업데이트에서 열려요."));
 
       try {
         state.sound = localStorage.getItem("computer-explorer-sound") === "true";
