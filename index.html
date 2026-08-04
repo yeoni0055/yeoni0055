@@ -86,7 +86,7 @@
       linear-gradient(90deg,rgba(255,255,255,.22) 2px,transparent 2px),
       linear-gradient(#9bdcff 0 63%,#84d276 63%);
       background-size:32px 32px,32px 32px,100% 100%;overflow:hidden;cursor:crosshair;box-shadow:8px 8px 0 var(--ink)}
-    .board-help{position:absolute;z-index:1;top:14px;left:50%;transform:translateX(-50%);margin:0;padding:7px 13px;border:2px solid var(--ink);border-radius:99px;background:rgba(255,255,255,.92);font-weight:900;white-space:nowrap}
+    .board-help{position:absolute;z-index:1;top:14px;left:50%;width:max-content;max-width:calc(100% - 24px);transform:translateX(-50%);margin:0;padding:7px 13px;border:2px solid var(--ink);border-radius:99px;background:rgba(255,255,255,.92);font-weight:900;text-align:center}
     .targets{position:absolute;z-index:3;inset:0;pointer-events:none}.target{position:absolute;display:grid;place-items:center;width:var(--target-size,94px);height:var(--target-size,94px);border:4px solid var(--ink);border-radius:24%;background:#d7e9ff;color:#3256c4;font-size:calc(var(--target-size,94px)*.5);cursor:pointer;pointer-events:auto;box-shadow:7px 7px 0 var(--ink);transition:left var(--move-speed,.7s) linear,top var(--move-speed,.7s) linear,transform .12s}.target:nth-child(3n){background:#dff8e9;color:#168052}.target:nth-child(3n+2){background:#ffe2eb;color:#c24a70}.target.bonus-star{background:var(--yellow);color:#b66f00;box-shadow:0 0 0 8px rgba(255,216,92,.28),7px 7px 0 var(--ink)}
     .target:hover{transform:scale(1.06)}.target:active{transform:scale(.92)}
     .pause-cover{position:absolute;z-index:5;inset:0;display:grid;place-items:center;background:rgba(23,33,61,.78);color:#fff;text-align:center}
@@ -221,7 +221,7 @@
           <div class="progress" id="progress"></div>
         </div>
         <div class="game-board" id="gameBoard" aria-label="별 클릭 게임 영역">
-          <p class="board-help">노란 별은 별 3개와 점수 3배! 빠르게 눌러요.</p>
+          <p class="board-help" id="boardHelp">다음 레벨까지 별 5개 · 노란 별은 별 3개!</p>
           <div class="targets" id="targets" aria-label="움직이는 블록별 모음"></div>
           <div class="pause-cover" id="pauseCover" hidden><div><strong>잠깐 쉬는 중</strong><span>일시정지 버튼을 누르면 다시 시작해요.</span></div></div>
         </div>
@@ -411,9 +411,15 @@
       function updateHud() {
         const config = levels[state.level];
         const percent = Math.min(100, Math.round((1 - state.remaining / config.duration) * 100));
+        const starsNeeded = Math.max(0, config.unlockAt - state.hits);
         $("#score").textContent = state.score.toLocaleString("ko-KR");
         $("#time").textContent = formatTime(state.remaining);
         $("#hits").textContent = state.hits + "개";
+        if (starsNeeded > 0) {
+          $("#boardHelp").textContent = (config.next ? "다음 레벨까지" : "최고 목표까지") + " 별 " + starsNeeded + "개 더 · 노란 별은 별 3개!";
+        } else {
+          $("#boardHelp").textContent = config.next ? "🎉 목표 달성! 다음 레벨에 도전할 수 있어요." : "👑 최고 목표를 달성했어요!";
+        }
         $("#progress").style.width = percent + "%";
         $(".progress-wrap").setAttribute("aria-valuenow", String(percent));
       }
@@ -554,26 +560,31 @@
             try { localStorage.setItem("computer-explorer-unlocked-level", String(state.unlockedLevel)); } catch (_) {}
           }
         }
-        state.nextLevel = newlyUnlocked;
+        const availableNextLevel = reachedGoal ? config.next : null;
+        state.nextLevel = availableNextLevel;
         const attempts = state.successClicks + state.misses;
         const accuracy = attempts ? Math.round((state.successClicks / attempts) * 100) : 0;
         const average = state.reactions.length
           ? (state.reactions.reduce((sum, value) => sum + value, 0) / state.reactions.length / 1000).toFixed(1)
           : "0.0";
         const reward = getReward(state.hits);
-        $("#resultTitle").textContent = newlyUnlocked ? "레벨 업!" : (state.level === "hard" && reachedGoal ? "비밀숲 정복!" : "비밀숲 탐험 완료!");
+        $("#resultTitle").textContent = availableNextLevel ? "레벨 업!" : (state.level === "hard" && reachedGoal ? "비밀숲 정복!" : "비밀숲 탐험 완료!");
         const explorerName = state.profile.nickname ? state.profile.nickname + " 탐험가, " : "";
-        $("#resultMessage").textContent = explorerName + (reachedGoal ? "빠른 클릭으로 별을 멋지게 모았어요!" : "조금 더 연습하면 다음 레벨을 열 수 있어요!");
+        const starsNeeded = Math.max(0, config.unlockAt - state.hits);
+        const retryGuide = config.next
+          ? "별 " + starsNeeded + "개를 더 모으면 다음 레벨로 갈 수 있어요!"
+          : "별 " + starsNeeded + "개를 더 모으면 최고 목표를 달성해요!";
+        $("#resultMessage").textContent = explorerName + (reachedGoal ? "목표 별 " + config.unlockAt + "개를 달성했어요!" : retryGuide);
         $("#resultScore").textContent = state.score.toLocaleString("ko-KR") + "점";
         $("#resultAccuracy").textContent = accuracy + "%";
         $("#resultReaction").textContent = average + "초";
         $("#rewardIcon").textContent = reward.icon;
         $("#rewardStars").textContent = state.hits;
         $("#rewardName").textContent = reward.name;
-        $("#levelUpMessage").hidden = !newlyUnlocked;
-        $("#levelUpMessage").textContent = newlyUnlocked ? "🎉 " + levels[newlyUnlocked].label + "이 열렸어요!" : "";
-        $("#nextLevelBtn").hidden = !newlyUnlocked;
-        if (newlyUnlocked) $("#nextLevelBtn").textContent = levels[newlyUnlocked].label + " 도전 →";
+        $("#levelUpMessage").hidden = !availableNextLevel;
+        $("#levelUpMessage").textContent = availableNextLevel ? "🎉 별 " + config.unlockAt + "개 달성! " + levels[availableNextLevel].label + "에 갈 수 있어요." : "";
+        $("#nextLevelBtn").hidden = !availableNextLevel;
+        if (availableNextLevel) $("#nextLevelBtn").textContent = levels[availableNextLevel].label + " 바로 도전 →";
         try {
           localStorage.setItem("computer-explorer-last-result", JSON.stringify({
             activity: "click", level: state.level, score: state.score,
