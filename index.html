@@ -27,7 +27,7 @@
     .brand{display:flex;align-items:center;gap:12px;font-size:20px;font-weight:900}
     .brand-mark{display:grid;place-items:center;width:48px;height:48px;border:3px solid var(--ink);border-radius:14px;background:var(--yellow);box-shadow:4px 4px 0 var(--ink);font-size:25px}
     .brand span span{color:var(--blue)}
-    .top-actions{display:flex;gap:10px}
+    .top-actions{display:flex;align-items:center;gap:10px}
     .small-btn,.icon-btn{min-height:46px;border:2px solid var(--ink);border-radius:14px;background:#fff;color:var(--ink);font-weight:900;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}
     .small-btn{padding:0 15px}.icon-btn{width:50px;font-size:20px}
     .small-btn:active,.icon-btn:active,.btn:active,.activity-card:active,.level:active{transform:translate(3px,3px);box-shadow:none}
@@ -87,7 +87,7 @@
       linear-gradient(#9bdcff 0 63%,#84d276 63%);
       background-size:32px 32px,32px 32px,100% 100%;overflow:hidden;cursor:crosshair;box-shadow:8px 8px 0 var(--ink)}
     .board-help{position:absolute;z-index:1;top:14px;left:50%;transform:translateX(-50%);margin:0;padding:7px 13px;border:2px solid var(--ink);border-radius:99px;background:rgba(255,255,255,.92);font-weight:900;white-space:nowrap}
-    .targets{position:absolute;z-index:3;inset:0;pointer-events:none}.target{position:absolute;display:grid;place-items:center;width:var(--target-size,94px);height:var(--target-size,94px);border:4px solid var(--ink);border-radius:24%;background:var(--yellow);color:var(--ink);font-size:calc(var(--target-size,94px)*.5);cursor:pointer;pointer-events:auto;box-shadow:7px 7px 0 var(--ink);transition:left var(--move-speed,.7s) linear,top var(--move-speed,.7s) linear,transform .12s}
+    .targets{position:absolute;z-index:3;inset:0;pointer-events:none}.target{position:absolute;display:grid;place-items:center;width:var(--target-size,94px);height:var(--target-size,94px);border:4px solid var(--ink);border-radius:24%;background:#d7e9ff;color:#3256c4;font-size:calc(var(--target-size,94px)*.5);cursor:pointer;pointer-events:auto;box-shadow:7px 7px 0 var(--ink);transition:left var(--move-speed,.7s) linear,top var(--move-speed,.7s) linear,transform .12s}.target:nth-child(3n){background:#dff8e9;color:#168052}.target:nth-child(3n+2){background:#ffe2eb;color:#c24a70}.target.bonus-star{background:var(--yellow);color:#b66f00;box-shadow:0 0 0 8px rgba(255,216,92,.28),7px 7px 0 var(--ink)}
     .target:hover{transform:scale(1.06)}.target:active{transform:scale(.92)}
     .pause-cover{position:absolute;z-index:5;inset:0;display:grid;place-items:center;background:rgba(23,33,61,.78);color:#fff;text-align:center}
     .pause-cover[hidden]{display:none}.pause-cover strong{display:block;font-size:38px}.pause-cover span{font-size:18px}
@@ -105,14 +105,18 @@
     .btn.secondary{background:#fff;color:var(--ink)}
     .toast{position:fixed;z-index:50;left:50%;bottom:24px;max-width:calc(100% - 32px);padding:14px 20px;border:3px solid var(--ink);border-radius:15px;background:#fff;color:var(--ink);font-weight:900;box-shadow:5px 5px 0 var(--ink);transform:translate(-50%,140%);transition:transform .25s}
     .toast.show{transform:translate(-50%,0)}
+    .profile-chip{display:flex;align-items:center;gap:8px;min-height:46px;padding:3px 12px 3px 5px;border:2px solid var(--ink);border-radius:14px;background:#fff;color:var(--ink);font-weight:900;cursor:pointer;box-shadow:3px 3px 0 var(--ink)}.profile-chip>#profileGreeting{max-width:110px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .modal-backdrop{position:fixed;z-index:80;inset:0;display:grid;place-items:center;padding:18px;background:rgba(23,33,61,.72)}.modal-backdrop[hidden]{display:none}.profile-modal{position:relative;width:min(620px,100%);max-height:calc(100vh - 36px);overflow:auto;padding:28px;border:4px solid var(--ink);border-radius:28px;background:#fff;box-shadow:10px 10px 0 var(--ink);text-align:center}.profile-modal h2{margin:0;font-size:31px}.profile-modal>p{margin:7px 0 18px;color:var(--muted);font-weight:700}.modal-close{position:absolute;top:14px;right:14px;width:42px;height:42px;border:2px solid var(--ink);border-radius:12px;background:#fff;font-size:24px;cursor:pointer}.profile-grid{display:grid;grid-template-columns:190px 1fr;gap:22px;align-items:center}.avatar-stage{display:grid;place-items:center;min-height:245px;border:3px solid var(--ink);border-radius:22px;background:linear-gradient(#dff4ff 0 68%,#8cd37c 68%)}.profile-controls{text-align:left}.profile-controls label>span,.option-title{display:block;margin:13px 0 7px;font-size:13px;font-weight:900}.nickname-input{width:100%;height:50px;padding:0 14px;border:3px solid var(--ink);border-radius:13px;font-size:17px}.option-row{display:flex;flex-wrap:wrap;gap:8px}.option-button,.swatch{min-height:43px;border:2px solid var(--ink);border-radius:11px;background:#fff;font-weight:900;cursor:pointer}.option-button{padding:0 12px}.option-button[aria-pressed="true"],.swatch[aria-pressed="true"]{outline:4px solid var(--yellow);outline-offset:2px;background:#eef2ff}.swatch{width:43px;color:transparent}.profile-save{width:100%;margin-top:20px}.privacy-note{margin:14px 0 0!important;padding:10px;border-radius:12px;background:#eef9f4;color:#236348!important;font-size:12px}.form-error{min-height:22px;margin:4px 0 0;color:#b42338;font-size:13px;font-weight:900;text-align:left}
+    .pixel-avatar{--skin:#f2c7a5;--hair:#3c2b29;--outfit:#4568f2;position:relative;width:112px;height:185px}.pixel-avatar .hair{position:absolute;z-index:3;left:24px;top:9px;width:64px;height:28px;border:4px solid var(--ink);border-bottom:0;border-radius:13px 13px 0 0;background:var(--hair)}.pixel-avatar.girl .hair:before,.pixel-avatar.girl .hair:after{content:"";position:absolute;top:15px;width:15px;height:60px;border:4px solid var(--ink);background:var(--hair)}.pixel-avatar.girl .hair:before{left:-13px}.pixel-avatar.girl .hair:after{right:-13px}.pixel-avatar .avatar-head{position:absolute;z-index:2;left:22px;top:25px;width:68px;height:70px;border:4px solid var(--ink);border-radius:13px;background:var(--skin)}.pixel-avatar .eye{position:absolute;top:27px;width:7px;height:9px;border-radius:3px;background:var(--ink)}.pixel-avatar .eye.left{left:15px}.pixel-avatar .eye.right{right:15px}.pixel-avatar .mouth{position:absolute;left:27px;bottom:14px;width:12px;height:6px;border:3px solid var(--ink);border-top:0;border-radius:0 0 8px 8px}.pixel-avatar .avatar-body{position:absolute;z-index:2;left:19px;top:91px;width:74px;height:61px;border:4px solid var(--ink);border-radius:12px;background:var(--outfit)}.pixel-avatar.girl .avatar-body{border-radius:12px 12px 22px 22px}.pixel-avatar .arm,.pixel-avatar .leg{position:absolute;border:4px solid var(--ink)}.pixel-avatar .arm{z-index:1;top:98px;width:23px;height:56px;border-radius:10px;background:var(--skin)}.pixel-avatar .arm.left{left:2px;transform:rotate(5deg)}.pixel-avatar .arm.right{right:2px;transform:rotate(-5deg)}.pixel-avatar .leg{top:146px;width:28px;height:39px;background:#384463}.pixel-avatar .leg.left{left:24px}.pixel-avatar .leg.right{right:24px}.pixel-avatar.mini{width:34px;height:36px;transform:scale(.27);transform-origin:top left;margin-right:-25px;margin-bottom:-27px}
     .footer-note{margin-top:38px;text-align:center;color:var(--muted);font-size:13px;font-weight:700}
+    .avatar-mini-wrap{position:relative;width:32px;height:38px;overflow:hidden;flex:0 0 32px}.avatar-mini-wrap .pixel-avatar.mini{position:absolute;left:5px;top:0;width:112px;height:185px;transform:scale(.2);transform-origin:top left;margin:0}
     @media(max-width:900px){
       .hero{grid-template-columns:1fr}.world{min-height:230px}.activities{grid-template-columns:repeat(2,1fr)}
       .activity-card:last-child{grid-column:1/-1}.activity-card{min-height:190px}
     }
     @media(max-width:600px){
       .app{background:linear-gradient(180deg,#dff4ff 0 500px,var(--cloud) 500px)}
-      .topbar{min-height:70px}.brand span{font-size:16px}.brand-mark{width:42px;height:42px}.small-btn .optional{display:none}
+      .topbar{min-height:70px}.brand span{font-size:16px}.brand-mark{width:42px;height:42px}.small-btn .optional,.profile-chip>#profileGreeting{display:none}.profile-chip{width:48px;padding:3px 5px}
       main{width:min(100% - 22px,1180px)}.hero{padding-top:20px}.world{display:none}.activities{grid-template-columns:1fr 1fr;gap:11px}
       .activity-card{min-height:210px;padding:17px 13px;box-shadow:4px 4px 0 var(--ink)}.activity-card .art{width:62px;height:62px;font-size:30px}
       .choice-panel{padding:25px 17px;margin-top:25px}.levels{grid-template-columns:1fr}.level{min-height:92px}
@@ -120,6 +124,7 @@
       .hud{gap:7px}.stat{display:block;min-height:65px;padding:8px;text-align:center;font-size:12px}.stat strong{display:block;font-size:20px}
       .game-board{height:56vh;min-height:360px}.result-card{padding:27px 16px;margin-top:25px}.result-stats{gap:7px}.result-stat strong{font-size:21px}
       .result-actions{flex-direction:column}
+      .profile-grid{grid-template-columns:1fr}.avatar-stage{min-height:215px}.profile-modal{padding:25px 17px}.profile-controls{max-width:360px;width:100%;margin:auto}
     }
     @media(prefers-reduced-motion:reduce){
       *,*::before,*::after{scroll-behavior:auto!important;transition:none!important;animation:none!important}
@@ -135,6 +140,10 @@
         <span>컴퓨터 <span>탐험대</span></span>
       </div>
       <div class="top-actions">
+        <button class="profile-chip" id="profileBtn" type="button" aria-label="나의 탐험가 캐릭터 꾸미기">
+          <span class="avatar-mini-wrap" aria-hidden="true"><span class="pixel-avatar mini boy" data-avatar-preview><span class="hair"></span><span class="avatar-head"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></span><span class="avatar-body"></span><i class="arm left"></i><i class="arm right"></i><i class="leg left"></i><i class="leg right"></i></span></span>
+          <span id="profileGreeting">내 캐릭터</span>
+        </button>
         <button class="icon-btn" id="soundBtn" type="button" aria-pressed="false" aria-label="소리 켜기">🔇</button>
         <button class="small-btn" id="teacherBtn" type="button">🔒 <span class="optional">교사용 설정</span></button>
       </div>
@@ -162,7 +171,7 @@
         </div>
         <div class="activities" aria-label="활동 선택">
           <button class="activity-card primary" type="button" data-activity="click">
-            <span class="art" aria-hidden="true">★</span><h3>비밀숲 별 사냥</h3><p>여러 개의 움직이는 별을 빠르게 눌러 많이 모아요.</p><span class="tag">지금 플레이</span>
+            <span class="art" aria-hidden="true">★</span><h3>비밀숲 별 사냥</h3><p>움직이는 별과 노란 보너스별을 눌러 많이 모아요.</p><span class="tag">지금 플레이</span>
           </button>
           <button class="activity-card" type="button" data-activity="drag" aria-disabled="true">
             <span class="art" aria-hidden="true">↔</span><h3>드래그 광산</h3><p>블록을 알맞은 곳으로 옮겨요.</p><span class="tag">다음 미션</span>
@@ -177,7 +186,7 @@
             <span class="art" aria-hidden="true">⌘</span><h3>기초 마을</h3><p>파일과 폴더, 아이콘의 역할을 찾아요.</p><span class="tag">준비 중</span>
           </button>
         </div>
-        <p class="footer-note">광고도, 외부 사이트 이동도 없어요. 개인정보를 입력하지 않고 바로 놀 수 있어요.</p>
+        <p class="footer-note">광고도, 외부 사이트 이동도 없어요. 실명 대신 별칭을 쓰고 기록은 이 브라우저에만 저장해요.</p>
       </section>
 
       <section class="screen" id="difficultyScreen" aria-labelledby="difficultyTitle" hidden>
@@ -188,7 +197,7 @@
           <h2 id="difficultyTitle">비밀숲 탐험 레벨을 골라요</h2>
           <p>별을 모아 다음 레벨을 열어 보세요!</p>
           <div class="levels">
-            <button class="level" type="button" data-level="easy"><strong>🌱 레벨 1 · 새싹</strong><span>30초 · 움직이는 별 3개 · 8개면 레벨업</span></button>
+            <button class="level" type="button" data-level="easy"><strong>🌱 레벨 1 · 새싹</strong><span>35초 · 크고 느린 별 3개 · 5개면 레벨업</span></button>
             <button class="level" type="button" data-level="normal"><strong>🌳 레벨 2 · 탐험가</strong><span>35초 · 움직이는 별 4개 · 12개면 레벨업</span></button>
             <button class="level" type="button" data-level="hard"><strong>🚀 레벨 3 · 마스터</strong><span>40초 · 움직이는 별 5개 · 최고 기록 도전</span></button>
           </div>
@@ -212,7 +221,7 @@
           <div class="progress" id="progress"></div>
         </div>
         <div class="game-board" id="gameBoard" aria-label="별 클릭 게임 영역">
-          <p class="board-help">여러 개의 움직이는 별을 빠르게 눌러요!</p>
+          <p class="board-help">노란 별은 별 3개와 점수 3배! 빠르게 눌러요.</p>
           <div class="targets" id="targets" aria-label="움직이는 블록별 모음"></div>
           <div class="pause-cover" id="pauseCover" hidden><div><strong>잠깐 쉬는 중</strong><span>일시정지 버튼을 누르면 다시 시작해요.</span></div></div>
         </div>
@@ -243,6 +252,44 @@
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <div class="modal-backdrop" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="profileTitle" hidden>
+    <section class="profile-modal">
+      <button class="modal-close" id="profileClose" type="button" aria-label="캐릭터 꾸미기 닫기">×</button>
+      <h2 id="profileTitle">나만의 탐험가 만들기</h2>
+      <p>별칭과 캐릭터를 고르고 비밀숲으로 출발해요!</p>
+      <div class="profile-grid">
+        <div class="avatar-stage" aria-label="선택한 캐릭터 미리보기">
+          <div class="pixel-avatar boy" data-avatar-preview aria-hidden="true"><div class="hair"></div><div class="avatar-head"><i class="eye left"></i><i class="eye right"></i><i class="mouth"></i></div><div class="avatar-body"></div><i class="arm left"></i><i class="arm right"></i><i class="leg left"></i><i class="leg right"></i></div>
+        </div>
+        <div class="profile-controls">
+          <label for="nicknameInput"><span>탐험가 별칭</span></label>
+          <input class="nickname-input" id="nicknameInput" type="text" maxlength="10" autocomplete="off" placeholder="예: 반짝별" aria-describedby="profileError privacyNote">
+          <p class="form-error" id="profileError" role="alert"></p>
+          <span class="option-title">캐릭터 선택</span>
+          <div class="option-row" aria-label="캐릭터 선택">
+            <button class="option-button" type="button" data-avatar-type="boy" aria-pressed="true">남자 캐릭터</button>
+            <button class="option-button" type="button" data-avatar-type="girl" aria-pressed="false">여자 캐릭터</button>
+          </div>
+          <span class="option-title">머리색</span>
+          <div class="option-row" aria-label="머리색 선택">
+            <button class="swatch" type="button" data-hair="#3c2b29" style="background:#3c2b29" aria-label="진한 갈색" aria-pressed="true">진한 갈색</button>
+            <button class="swatch" type="button" data-hair="#8b552e" style="background:#8b552e" aria-label="밝은 갈색" aria-pressed="false">밝은 갈색</button>
+            <button class="swatch" type="button" data-hair="#26334f" style="background:#26334f" aria-label="검푸른색" aria-pressed="false">검푸른색</button>
+          </div>
+          <span class="option-title">옷 색상</span>
+          <div class="option-row" aria-label="옷 색상 선택">
+            <button class="swatch" type="button" data-outfit="#4568f2" style="background:#4568f2" aria-label="파란색" aria-pressed="true">파란색</button>
+            <button class="swatch" type="button" data-outfit="#f06d8f" style="background:#f06d8f" aria-label="분홍색" aria-pressed="false">분홍색</button>
+            <button class="swatch" type="button" data-outfit="#27a66f" style="background:#27a66f" aria-label="초록색" aria-pressed="false">초록색</button>
+            <button class="swatch" type="button" data-outfit="#8a5bd7" style="background:#8a5bd7" aria-label="보라색" aria-pressed="false">보라색</button>
+          </div>
+        </div>
+      </div>
+      <button class="btn profile-save" id="profileSave" type="button">이 모습으로 시작하기</button>
+      <p class="privacy-note" id="privacyNote">🔒 실명 대신 별칭을 사용하세요. 별칭과 캐릭터는 이 브라우저에만 저장돼요.</p>
+    </section>
+  </div>
+
   <script>
     (() => {
       "use strict";
@@ -252,15 +299,16 @@
         game: $("#gameScreen"), result: $("#resultScreen")
       };
       const levels = {
-        easy: { order: 1, label: "레벨 1 · 새싹", duration: 30000, starCount: 3, moveInterval: 1400, moveSpeed: 850, size: 92, points: 100, unlockAt: 8, next: "normal" },
+        easy: { order: 1, label: "레벨 1 · 새싹", duration: 35000, starCount: 3, moveInterval: 1800, moveSpeed: 1000, size: 104, points: 100, unlockAt: 5, next: "normal" },
         normal: { order: 2, label: "레벨 2 · 탐험가", duration: 35000, starCount: 4, moveInterval: 1050, moveSpeed: 700, size: 76, points: 130, unlockAt: 12, next: "hard" },
         hard: { order: 3, label: "레벨 3 · 마스터", duration: 40000, starCount: 5, moveInterval: 780, moveSpeed: 520, size: 62, points: 160, unlockAt: 16, next: null }
       };
       const state = {
-        level: "easy", score: 0, hits: 0, misses: 0, paused: false,
-        remaining: 30000, endAt: 0, timerId: null, moveTimerId: null,
+        level: "easy", score: 0, hits: 0, successClicks: 0, misses: 0, paused: false,
+        remaining: 35000, endAt: 0, timerId: null, moveTimerId: null,
         reactions: [], sound: false, active: false,
-        unlockedLevel: 1, nextLevel: null
+        unlockedLevel: 1, nextLevel: null,
+        profile: { nickname: "", avatarType: "boy", hair: "#3c2b29", outfit: "#4568f2", saved: false }
       };
       let toastTimer;
 
@@ -277,6 +325,58 @@
         node.classList.add("show");
         clearTimeout(toastTimer);
         toastTimer = setTimeout(() => node.classList.remove("show"), 2800);
+      }
+
+      function applyProfile() {
+        const profile = state.profile;
+        const displayName = profile.saved ? profile.nickname + " 탐험가" : "내 캐릭터";
+        $("#profileGreeting").textContent = displayName;
+        $("#profileBtn").setAttribute("aria-label", displayName + " 캐릭터 꾸미기");
+        document.querySelectorAll("[data-avatar-preview]").forEach((avatar) => {
+          avatar.classList.toggle("boy", profile.avatarType === "boy");
+          avatar.classList.toggle("girl", profile.avatarType === "girl");
+          avatar.style.setProperty("--hair", profile.hair);
+          avatar.style.setProperty("--outfit", profile.outfit);
+        });
+        document.querySelectorAll("[data-avatar-type]").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.avatarType === profile.avatarType));
+        });
+        document.querySelectorAll("[data-hair]").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.hair === profile.hair));
+        });
+        document.querySelectorAll("[data-outfit]").forEach((button) => {
+          button.setAttribute("aria-pressed", String(button.dataset.outfit === profile.outfit));
+        });
+      }
+
+      function openProfile(firstVisit) {
+        $("#nicknameInput").value = state.profile.nickname;
+        $("#profileError").textContent = "";
+        $("#profileClose").hidden = Boolean(firstVisit && !state.profile.saved);
+        $("#profileModal").hidden = false;
+        applyProfile();
+        setTimeout(() => $("#nicknameInput").focus(), 0);
+      }
+
+      function closeProfile() {
+        if (!state.profile.saved) return;
+        $("#profileModal").hidden = true;
+        $("#profileBtn").focus();
+      }
+
+      function saveProfile() {
+        const nickname = $("#nicknameInput").value.trim().slice(0, 10);
+        if (!nickname) {
+          $("#profileError").textContent = "탐험가 별칭을 입력해 주세요.";
+          $("#nicknameInput").focus();
+          return;
+        }
+        state.profile.nickname = nickname;
+        state.profile.saved = true;
+        try { localStorage.setItem("computer-explorer-profile", JSON.stringify(state.profile)); } catch (_) {}
+        applyProfile();
+        $("#profileModal").hidden = true;
+        toast(nickname + " 탐험가, 환영해요!");
       }
 
       function setSound(enabled) {
@@ -371,10 +471,15 @@
         const config = levels[state.level];
         const reaction = performance.now() - Number(star.dataset.shownAt || performance.now());
         const speedBonus = Math.max(0, Math.round((config.moveInterval - reaction) / 10));
+        const isBonus = star.dataset.bonus === "true";
+        const starsEarned = isBonus ? 3 : 1;
+        const scoreMultiplier = isBonus ? 3 : 1;
         state.reactions.push(reaction);
-        state.hits += 1;
-        state.score += config.points + speedBonus;
+        state.successClicks += 1;
+        state.hits += starsEarned;
+        state.score += (config.points + speedBonus) * scoreMultiplier;
         beep(); updateHud();
+        if (isBonus) toast("노란 보너스별! 별 3개와 점수 3배를 얻었어요!");
         positionStar(star, true);
       }
 
@@ -384,10 +489,12 @@
         container.replaceChildren();
         for (let index = 0; index < config.starCount; index += 1) {
           const star = document.createElement("button");
-          star.className = "target";
+          const isBonus = index === 0;
+          star.className = "target" + (isBonus ? " bonus-star" : "");
           star.type = "button";
           star.textContent = "★";
-          star.setAttribute("aria-label", "움직이는 블록별 " + (index + 1) + " 누르기");
+          star.dataset.bonus = String(isBonus);
+          star.setAttribute("aria-label", isBonus ? "노란 보너스별 누르기. 별 3개와 점수 3배" : "움직이는 블록별 " + (index + 1) + " 누르기");
           star.addEventListener("click", hitStar);
           container.appendChild(star);
           positionStar(star, index === 0);
@@ -403,7 +510,7 @@
         }
         state.level = levelName;
         state.nextLevel = null;
-        state.score = 0; state.hits = 0; state.misses = 0; state.reactions = [];
+        state.score = 0; state.hits = 0; state.successClicks = 0; state.misses = 0; state.reactions = [];
         state.paused = false; state.active = true; state.remaining = config.duration;
         state.endAt = Date.now() + config.duration;
         $("#levelLabel").textContent = config.label;
@@ -448,14 +555,15 @@
           }
         }
         state.nextLevel = newlyUnlocked;
-        const attempts = state.hits + state.misses;
-        const accuracy = attempts ? Math.round((state.hits / attempts) * 100) : 0;
+        const attempts = state.successClicks + state.misses;
+        const accuracy = attempts ? Math.round((state.successClicks / attempts) * 100) : 0;
         const average = state.reactions.length
           ? (state.reactions.reduce((sum, value) => sum + value, 0) / state.reactions.length / 1000).toFixed(1)
           : "0.0";
         const reward = getReward(state.hits);
         $("#resultTitle").textContent = newlyUnlocked ? "레벨 업!" : (state.level === "hard" && reachedGoal ? "비밀숲 정복!" : "비밀숲 탐험 완료!");
-        $("#resultMessage").textContent = reachedGoal ? "빠른 클릭으로 별을 멋지게 모았어요!" : "조금 더 연습하면 다음 레벨을 열 수 있어요!";
+        const explorerName = state.profile.nickname ? state.profile.nickname + " 탐험가, " : "";
+        $("#resultMessage").textContent = explorerName + (reachedGoal ? "빠른 클릭으로 별을 멋지게 모았어요!" : "조금 더 연습하면 다음 레벨을 열 수 있어요!");
         $("#resultScore").textContent = state.score.toLocaleString("ko-KR") + "점";
         $("#resultAccuracy").textContent = accuracy + "%";
         $("#resultReaction").textContent = average + "초";
@@ -469,7 +577,7 @@
         try {
           localStorage.setItem("computer-explorer-last-result", JSON.stringify({
             activity: "click", level: state.level, score: state.score,
-            accuracy, hits: state.hits, reward: reward.name,
+            accuracy, hits: state.hits, successClicks: state.successClicks, reward: reward.name,
             unlockedLevel: state.unlockedLevel, playedAt: new Date().toISOString()
           }));
         } catch (_) {}
@@ -520,6 +628,27 @@
       $("#resultHomeBtn").addEventListener("click", goHome);
       $("#retryBtn").addEventListener("click", () => startGame(state.level));
       $("#nextLevelBtn").addEventListener("click", () => state.nextLevel && startGame(state.nextLevel));
+      $("#profileBtn").addEventListener("click", () => openProfile(false));
+      $("#profileClose").addEventListener("click", closeProfile);
+      $("#profileSave").addEventListener("click", saveProfile);
+      $("#profileModal").addEventListener("click", (event) => {
+        if (event.target === $("#profileModal")) closeProfile();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && !$("#profileModal").hidden) closeProfile();
+      });
+      $("#nicknameInput").addEventListener("keydown", (event) => {
+        if (event.key === "Enter") saveProfile();
+      });
+      document.querySelectorAll("[data-avatar-type]").forEach((button) => {
+        button.addEventListener("click", () => { state.profile.avatarType = button.dataset.avatarType; applyProfile(); });
+      });
+      document.querySelectorAll("[data-hair]").forEach((button) => {
+        button.addEventListener("click", () => { state.profile.hair = button.dataset.hair; applyProfile(); });
+      });
+      document.querySelectorAll("[data-outfit]").forEach((button) => {
+        button.addEventListener("click", () => { state.profile.outfit = button.dataset.outfit; applyProfile(); });
+      });
       $("#soundBtn").addEventListener("click", () => setSound(!state.sound));
       $("#teacherBtn").addEventListener("click", () => toast("교사용 시간·활동 설정은 다음 업데이트에서 열려요."));
 
@@ -527,12 +656,25 @@
         state.sound = localStorage.getItem("computer-explorer-sound") === "true";
         const savedLevel = Number(localStorage.getItem("computer-explorer-unlocked-level"));
         if ([1, 2, 3].includes(savedLevel)) state.unlockedLevel = savedLevel;
+        const savedProfile = JSON.parse(localStorage.getItem("computer-explorer-profile") || "null");
+        const allowedTypes = ["boy", "girl"];
+        const allowedHair = ["#3c2b29", "#8b552e", "#26334f"];
+        const allowedOutfits = ["#4568f2", "#f06d8f", "#27a66f", "#8a5bd7"];
+        if (savedProfile && typeof savedProfile.nickname === "string" && savedProfile.nickname.trim()) {
+          state.profile.nickname = savedProfile.nickname.trim().slice(0, 10);
+          state.profile.avatarType = allowedTypes.includes(savedProfile.avatarType) ? savedProfile.avatarType : "boy";
+          state.profile.hair = allowedHair.includes(savedProfile.hair) ? savedProfile.hair : "#3c2b29";
+          state.profile.outfit = allowedOutfits.includes(savedProfile.outfit) ? savedProfile.outfit : "#4568f2";
+          state.profile.saved = true;
+        }
       } catch (_) {}
       updateLevelButtons();
+      applyProfile();
       const soundButton = $("#soundBtn");
       soundButton.textContent = state.sound ? "🔊" : "🔇";
       soundButton.setAttribute("aria-pressed", String(state.sound));
       soundButton.setAttribute("aria-label", state.sound ? "소리 끄기" : "소리 켜기");
+      if (!state.profile.saved) setTimeout(() => openProfile(true), 0);
     })();
   </script>
 </body>
